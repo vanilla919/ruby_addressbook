@@ -1,0 +1,48 @@
+<%= form_for(@intro) do |f| %>
+  <% if @intro.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@intro.errors.count, "error") %> prohibited this intro from being saved:</h2>
+
+      <ul>
+      <% @intro.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+      <label for="intro[name]">姓名</label><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :sex %><br>
+    <select name="intro[sex]">
+        <option value="male">male</option>
+        <option value="female">female</option>
+    </select>
+  </div>
+  <div class="field">
+    <%= f.label :tel %><br>
+    <%= f.text_field :tel %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :position %><br>
+    <%= f.text_field :position %>
+  </div>
+  <div class="field">
+    <%= f.label :info %><br>
+    <%= f.text_area :info %>
+  </div>
+  <div class="field">
+    <%= f.label :photo %><br>
+    <%= f.text_field :photo %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

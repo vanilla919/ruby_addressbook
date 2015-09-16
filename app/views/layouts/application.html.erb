@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <link href="http://cdn.bootcss.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+        <title>Sweethome</title>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+        <%= csrf_meta_tags %>
+    </head>
+    <body>
+            <div class="navbar navbar-fixed-top">
+                <div class="navbar-inner">
+                    <div class="container">
+                        <ul class="nav">
+                            <li><a href="/">首页</a></li>
+                            <li><a href="/intros">成员</a></li>
+                            <li><a href="/contacts">通讯录</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="container" style="width: 1200px; margin-top: 40px;">
+                <%= yield %>
+            </div>
+        <script type="text/javascript" src="http://cdn.bootcss.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    </body>
+</html>
+
