@@ -1,0 +1,21 @@
+<h1>Welcome to Sweet Home</h1>
+<div id="myCarousel" class="carousel slide slideshow">
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <%  @persons.count.times do |i| %>
+            <li data-target="#myCarousel" data-slide-to="<%= i+1%>"></li>
+        <% end %>
+    </ol>
+    <!-- Carousel items -->
+    <div class="carousel-inner">
+        <div class="active item">
+            <img src="http://www.lensbury.com/wp-content/uploads/2015/03/Tower-of-London.jpg">
+        </div>
+        <% @persons.each do |person| %>
+            <div class="item"><a href="/intros/<%= person.id %>"><img src="<%= person.photo%>"></a></div>
+        <% end %>
+    </div>
+    <!-- Carousel nav -->
+    <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+    <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+</div>

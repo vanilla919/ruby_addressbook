@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Members</h1>
+<ul class="thumbnails">
+    <% @intros.each do |intro| %>
+        <li class="span3">
+        <a href="/intros/<%= intro.id %>" class="thumbnail">
+            <img src="<%= intro.photo%>" style="width:200px; height:200px; border-radius: 50%" alt="">
+        </a>
+        </li>
+    <% end %>
+    <li class="span3">
+    <a href="/intros/new" class="thumbnail">
+        <img src="http://pic.58pic.com/58pic/14/86/35/91H58PIC5sZ_1024.jpg" style="width:200px; height:200px;">
+    </a> 
+    </li>
+</ul>
